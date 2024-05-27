@@ -1,0 +1,44 @@
+const holdNFTs = []
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (name_,company_,color_,fueltype_) {
+    const NFT = {
+        "name" : name_,
+        "company" : company_,
+        "color" : color_,
+        "fueltyp" : fueltype_,
+    }
+    holdNFTs.push(NFT);
+    console.log('Minted  ' +name_);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+    for(i=0;i<holdNFTs.length;i++){
+        console.log("\nCARno: \t\t"+ (i + 1))
+        console.log("name: \t\t" + holdNFTs[i].name);
+        console.log("company: \t" + holdNFTs[i].company);
+        console.log("color: \t\t" + holdNFTs[i].color);
+        console.log("fueltype: " + holdNFTs[i].fueltype);
+    
+    }
+
+
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+console.log("\n" + holdNFTs.length);
+}
+
+// call your functions below this line
+mintNFT("BMW M5", "BMW","Black","Diesel");
+mintNFT("Urus", "Lemborghini","yellow","Petrol");
+mintNFT("panamera turbo S", "Porche","Silver","Electric");
+mintNFT("scorpio", "Mahindra","White","Diesel");
+mintNFT("laFerrari", "Ferrari", "Red", "Petrol");
+listNFTs();
+getTotalSupply();
